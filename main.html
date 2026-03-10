@@ -292,3 +292,101 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       font-weight: 600;
+    }
+
+    .mission-table tr:hover {
+      background: rgba(196, 30, 30, 0.04);
+    }
+
+    .phase-badge {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .phase-queued {
+      background: rgba(230, 126, 34, 0.2);
+      color: var(--accent-amber);
+    }
+
+    .phase-executed {
+      background: rgba(26, 188, 156, 0.2);
+      color: var(--accent-cyan);
+    }
+
+    .phase-terminated {
+      background: rgba(196, 30, 30, 0.2);
+      color: var(--accent-red);
+    }
+
+    .hash-short {
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .cta-block {
+      text-align: center;
+      padding: 2.5rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-top: 2rem;
+    }
+
+    .cta-block h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .cta-block p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--gradient-red);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.95;
+      transform: scale(1.02);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .status-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;

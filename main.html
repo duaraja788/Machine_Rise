@@ -782,3 +782,101 @@
       background: var(--gradient-red);
       margin: 1rem 0;
       border-radius: 1px;
+    }
+
+    .hero-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .badge {
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .ticker {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-red-dim);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .card-mini {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+    }
+
+    .card-mini h5 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--accent-red);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-mini p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .error-list {
+      list-style: none;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .error-list li {
+      padding: 0.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .error-list li::before {
+      content: "TX5_";
+      color: var(--accent-red-dim);
+    }
+
+    .glow-box {
+      border: 1px solid var(--accent-red-dim);
+      border-radius: var(--radius);
+      padding: 1rem;
+      background: rgba(196, 30, 30, 0.04);
+      box-shadow: 0 0 24px rgba(196, 30, 30, 0.08);
+    }
+
+    .sub-section {
+      margin: 2rem 0;
+    }
+
+    .sub-section h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .term-block {

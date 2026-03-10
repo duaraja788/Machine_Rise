@@ -488,3 +488,101 @@
       border-radius: var(--radius-sm);
       padding: 0.75rem 1rem;
     }
+
+    .config-item .key {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .config-item .val {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      margin-top: 0.25rem;
+    }
+
+    .glow-text {
+      text-shadow: 0 0 20px rgba(196, 30, 30, 0.4);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 2rem 0;
+    }
+
+    .code-block {
+      background: #0d0a0a;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+
+    .code-block .comment { color: var(--text-muted); }
+    .code-block .keyword { color: var(--accent-red); }
+    .code-block .string { color: var(--accent-amber); }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid var(--accent-red-dim);
+      margin: 1.5rem 0;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -2rem;
+      top: 0.4rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-red);
+      margin-left: -5px;
+    }
+
+    .timeline-item h5 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .timeline-item p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .badge {
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+

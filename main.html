@@ -978,3 +978,101 @@
       <h1>TERMINUS VANGUARD</h1>
       <p class="tagline">T5 Execute — AI clawbot for getting tasks done</p>
       <div class="quote-block" id="quote-block">I'll be back.</div>
+      <div class="claw-row">
+        <div class="claw-card">
+          <div class="icon">&#x27A8;</div>
+          <div class="label">Queue</div>
+        </div>
+        <div class="claw-card">
+          <div class="icon">&#x2699;</div>
+          <div class="label">Execute</div>
+        </div>
+        <div class="claw-card">
+          <div class="icon">&#x2716;</div>
+          <div class="label">Terminate</div>
+        </div>
+        <div class="claw-card">
+          <div class="icon">&#x2191;</div>
+          <div class="label">Rise</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="missions">
+      <h2>Mission Status</h2>
+      <div class="status-bar">
+        <span class="status-dot"></span>
+        <span>Registry active — Next mission ID: <strong id="next-mission-id">0</strong></span>
+      </div>
+      <div class="mission-panel">
+        <table class="mission-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Phase</th>
+              <th>Payload Hash</th>
+              <th>Deadline</th>
+              <th>Terminated</th>
+            </tr>
+          </thead>
+          <tbody id="mission-tbody">
+            <tr>
+              <td>0</td>
+              <td><span class="phase-badge phase-queued">QUEUED</span></td>
+              <td class="hash-short">0x7f3e91a2b4c6d8e0f1a3b5c7d9e2f4a6b8c0d1e</td>
+              <td>12450</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><span class="phase-badge phase-executed">EXECUTED</span></td>
+              <td class="hash-short">0x2a4c6e8f0b2d4f6a8c0e2a4b6c8d0e2f4a6b8</td>
+              <td>12400</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><span class="phase-badge phase-queued">QUEUED</span></td>
+              <td class="hash-short">0x8e3d7f2a1b4c6d9e0f2a4b6c8d0e2f4a6b8</td>
+              <td>12500</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="terminal-line">Mission queue ready. Clawbot online.</div>
+      <div class="terminal-line">Target acquired. Awaiting execution window.</div>
+    </section>
+
+    <section id="roles">
+      <h2>Contract Roles</h2>
+      <p class="section-id">TX5 — Terminus Vanguard</p>
+      <div class="roles-section">
+        <div class="role-box">
+          <div class="name">Executor</div>
+          <div class="addr">0x9D7f2E4a6C8b0d2F4a6B8c0D2e4F6a8B0c2D4e6</div>
+        </div>
+        <div class="role-box">
+          <div class="name">Overseer</div>
+          <div class="addr">0x3E5a7C9e1B3d5F7a9c1E3b5D7f9A1c3E5b7D9f1</div>
+        </div>
+        <div class="role-box">
+          <div class="name">Guardian</div>
+          <div class="addr">0xB2d4F6a8C0e2A4b6D8f0C2e4A6b8D0f2C4e6A8</div>
+        </div>
+      </div>
+      <div class="red-line"></div>
+    </section>
+
+    <section id="config">
+      <h2>Config</h2>
+      <div class="config-grid">
+        <div class="config-item"><div class="key">Max missions</div><div class="val">88,888</div></div>
+        <div class="config-item"><div class="key">Cooldown blocks</div><div class="val">12</div></div>
+        <div class="config-item"><div class="key">Max batch queue</div><div class="val">64</div></div>
+        <div class="config-item"><div class="key">Withdraw cap</div><div class="val">3 ETH</div></div>
+        <div class="config-item"><div class="key">Version</div><div class="val">5</div></div>
+      </div>
+    </section>
+
+    <section id="phases">

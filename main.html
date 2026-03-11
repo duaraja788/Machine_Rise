@@ -1272,3 +1272,98 @@
         "Mission rise. Machine active.",
         "Task terminated. Moving to next."
       ];
+      var block = document.getElementById("quote-block");
+      if (block) {
+        function rotateQuote() {
+          block.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+        }
+        setInterval(rotateQuote, 5000);
+      }
+      var nextMissionId = 3;
+      var missions = [
+        { id: 0, phase: "QUEUED", phaseClass: "phase-queued", hash: "0x7f3e91a2b4c6d8e0f1a3b5c7d9e2f4a6b8c0d1e", deadline: 12450, terminated: "No" },
+        { id: 1, phase: "EXECUTED", phaseClass: "phase-executed", hash: "0x2a4c6e8f0b2d4f6a8c0e2a4b6c8d0e2f4a6b8", deadline: 12400, terminated: "No" },
+        { id: 2, phase: "QUEUED", phaseClass: "phase-queued", hash: "0x8e3d7f2a1b4c6d9e0f2a4b6c8d0e2f4a6b8", deadline: 12500, terminated: "No" }
+      ];
+      function renderMissions() {
+        var tbody = document.getElementById("mission-tbody");
+        if (!tbody) return;
+        tbody.innerHTML = missions.map(function (m) {
+          return "<tr><td>" + m.id + "</td><td><span class=\"phase-badge " + m.phaseClass + "\">" + m.phase + "</span></td><td class=\"hash-short\">" + m.hash + "</td><td>" + m.deadline + "</td><td>" + m.terminated + "</td></tr>";
+        }).join("");
+      }
+      function addMission(phase, deadline) {
+        var id = nextMissionId++;
+        var phaseClass = phase === "EXECUTED" ? "phase-executed" : phase === "TERMINATED" ? "phase-terminated" : "phase-queued";
+        var hash = "0x" + Array(40).fill(0).map(function () { return "0123456789abcdef"[Math.floor(Math.random() * 16)]; }).join("");
+        missions.push({ id: id, phase: phase, phaseClass: phaseClass, hash: hash, deadline: deadline || 12500 + id * 10, terminated: phase === "TERMINATED" ? "Yes" : "No" });
+        renderMissions();
+        document.getElementById("next-mission-id").textContent = String(nextMissionId);
+        document.getElementById("stat-missions").textContent = String(missions.length);
+      }
+      renderMissions();
+      document.getElementById("next-mission-id").textContent = String(nextMissionId);
+      var ctaBtn = document.getElementById("cta-btn");
+      if (ctaBtn) {
+        ctaBtn.addEventListener("click", function () {
+          alert("Connect wallet or run T2 CLI: t2 status");
+        });
+      }
+      var modal = document.getElementById("modal-overlay");
+      var modalClose = document.getElementById("modal-close");
+      var modalSubmit = document.getElementById("modal-submit");
+      var queueDemoBtn = document.getElementById("queue-demo-btn");
+      function openModal() {
+        if (modal) modal.classList.add("visible");
+      }
+      function closeModal() {
+        if (modal) modal.classList.remove("visible");
+      }
+      if (modalClose) modalClose.addEventListener("click", closeModal);
+      if (modal) {
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) closeModal();
+        });
+      }
+      if (modalSubmit) {
+        modalSubmit.addEventListener("click", function () {
+          var payload = document.getElementById("modal-payload");
+          var deadlineOffset = document.getElementById("modal-deadline");
+          var offset = deadlineOffset ? parseInt(deadlineOffset.value, 10) : 100;
+          var baseDeadline = 12500 + missions.length * 15;
+          addMission("QUEUED", baseDeadline + offset);
+          closeModal();
+        });
+      }
+      if (queueDemoBtn) queueDemoBtn.addEventListener("click", openModal);
+      document.querySelectorAll('nav a[href^="#"]').forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          var id = this.getAttribute("href").slice(1);
+          if (!id) return;
+          var el = document.getElementById(id);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+      document.querySelectorAll(".footer-links a").forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          var id = this.getAttribute("href").slice(1);
+          if (!id) return;
+          var el = document.getElementById(id);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+      function randomHash() {
+        return "0x" + Array(40).fill(0).map(function () { return "0123456789abcdef"[Math.floor(Math.random() * 16)]; }).join("");
+      }
+      window.addMission = addMission;
+      window.missions = missions;
+    })();
+  </script>
+</body>
+</html>
